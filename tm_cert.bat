@@ -36,9 +36,9 @@ goto Ende
 
 
 :NewKey
-del java_keystore
-del pkcs12_keystore
-del certificate_request.csr
+if exist java_keystore del java_keystore
+if exist pkcs12_keystore del pkcs12_keystore
+if exist certificate_request.csr del certificate_request.csr
 keytool -keypass %KEYSTORE_PASS% -storepass %KEYSTORE_PASS% -genkey -alias tomcat -keystore java_keystore -keyalg RSA -validity 3650 -keysize 4096 -dname "cn=%FQDN%, ou=IT, o=Trend Micro, l=Hamburg, s=Hamburg, c=CA"
 if "%ERRORLEVEL%"=="0" (
     echo Keystore erstellt.
