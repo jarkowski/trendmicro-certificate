@@ -19,6 +19,10 @@ if "%KEYSTORE_PASS%"=="%KEYSTORE_PASS2%" (
 
 :Auswahl
 echo.
+echo Es wird %FQDN% als FQDN fuer das Zertifikat benutzt.
+echo Bitte pruefen, ob das der gewünschte DNS Name für das Zertifikat ist.
+echo Der FQDN kann im Skript angepasst werden. 
+echo.
 echo Bitte waehlen:
 echo   1) Neuen Keystore + CSR generieren
 echo   2) CSR importieren
@@ -27,7 +31,7 @@ set /p CHOICE=Auswahl 1,2 oder 3, dann ENTER:
 
 if "%CHOICE%"=="1" goto NewKey
 if "%CHOICE%"=="2" goto ImportCSR
-if "%CHOICE%"=="2" goto Ende
+if "%CHOICE%"=="3" goto Ende
 
 echo.
 echo Ungueltige Auswahl.
