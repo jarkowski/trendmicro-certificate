@@ -3,7 +3,7 @@ setlocal
 
 :Start
 cls
-set FQDN=server.tm.example.com
+set /p FQDN=Vollstaendigen FQDN eingeben (Beispiel TMSVR123.abt.firma.de):
 set /p KEYSTORE_PASS=Passwort fuer den Keystore:
 set /p KEYSTORE_PASS2=Passwort erneut eingeben:
 
